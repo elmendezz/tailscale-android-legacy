@@ -159,7 +159,7 @@ ts status
 
 Credits / Créditos
 - Project Author / Autor: elmendezz
-- ROM Environment: Alex (LineageOS 14.1 for S3)
+- ROM Environment: Alexenferman (LineageOS 14.1 for S3)
 - Software: Tailscale
 
 Developed for the community to keep legacy hardware useful. Desarrollado para la comunidad para mantener hardware antiguo funcional.
