@@ -21,7 +21,7 @@ uname -m
 #  * aarch64 or arm64  -> use "arm64"
 ```
 
-🚀 1. Installation / Instalación (Termux)
+# 🚀 1. Installation / Instalación (Termux)
 EN: We will download the package and move the binaries directly to Termux's binary folder ($PREFIX/bin).
 
 ES: Descargaremos el paquete y moveremos los binarios directamente a la carpeta de binarios de Termux ($PREFIX/bin).
