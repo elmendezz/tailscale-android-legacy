@@ -26,7 +26,9 @@ EN: We will download the package and move the binaries directly to Termux's bina
 
 ES: Descargaremos el paquete y moveremos los binarios directamente a la carpeta de binarios de Termux ($PREFIX/bin).
 
-Note: On GitHub (file view) fenced code blocks display a copy button (clipboard icon) you can click to copy the commands. / Nota: En GitHub (vista de archivo) los bloques de código muestran un botón "Copiar" (icono de portapapeles) que permite copiar con un clic.
+Note: On GitHub (file view) fenced code blocks display a copy button (clipboard icon) you can click to copy the commands. 
+
+Nota: En GitHub (vista de archivo) los bloques de código muestran un botón "Copiar" (icono de portapapeles) que permite copiar con un clic.
 
 <details>
 <summary><b>English: Download & Install</b> (Click to expand)</summary>
