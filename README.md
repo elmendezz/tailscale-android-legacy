@@ -1,13 +1,16 @@
 # Tailscale for Android (Legacy & Modern) via Termux + Magisk
 A comprehensive guide and toolset to run Tailscale natively on Android devices using static Linux binaries. This method bypasses the limitations of the official Android app, allowing global CLI access...
+
 Esta es una guía completa para ejecutar Tailscale de forma nativa en Android usando binarios estáticos de Linux. Este método evita las limitaciones de la app oficial, permitiendo acceso global por CLI...
 
 # ⚠️ Disclaimer / Descargo de Responsabilidad
 EN: We are not responsible for any damage to your device. Although this process is safe and reversible, modifying system files via Magisk always carries a minimal risk. Proceed with caution.
+
 ES: No nos hacemos responsables de cualquier daño a tu dispositivo. Aunque este proceso es seguro y reversible, la modificación de archivos del sistema mediante Magisk siempre conlleva un riesgo mínimo. Procede con precaución.
 
 # 🔍 0. Verify Architecture / Verifica tu Arquitectura
 EN: Before downloading, verify your device's ABI (Architecture) to choose the correct binary.
+
 ES: Antes de descargar, verifica la arquitectura (ABI) de tu dispositivo para elegir el binario correcto.
 
 In Termux / En Termux:
@@ -20,6 +23,7 @@ uname -m
 
 🚀 1. Installation / Instalación (Termux)
 EN: We will download the package and move the binaries directly to Termux's binary folder ($PREFIX/bin).
+
 ES: Descargaremos el paquete y moveremos los binarios directamente a la carpeta de binarios de Termux ($PREFIX/bin).
 
 Note: On GitHub (file view) fenced code blocks display a copy button (clipboard icon) you can click to copy the commands. / Nota: En GitHub (vista de archivo) los bloques de código muestran un botón "Copiar" (icono de portapapeles) que permite copiar con un clic.
@@ -92,6 +96,7 @@ rm -rf tailscale_${VERSION}_${ARCH}
 
 # 🏗️ 2. System Integration / Integración (Magisk)
 EN: This step creates symbolic links from Termux to /system/bin using Magisk, making the tailscale and tailscaled commands available globally.
+
 ES: Este paso crea enlaces simbólicos desde Termux a /system/bin usando Magisk, haciendo que los comandos estén disponibles globalmente.
 
 <details>
@@ -117,6 +122,7 @@ chmod +x /data/adb/modules/tailscale_fix/system/bin/ts
 
 # ⚙️ 3. Auto-Start Configuration / Inicio Automático
 EN: Automated startup script for Magisk.
+
 ES: Script de inicio automático para Magisk.
 
 <details>
@@ -146,7 +152,7 @@ chmod +x /data/adb/service.d/tailscale_init.sh
 
 </details>
 
-🏁 4. Usage / Uso
+# 🏁 4. Usage / Uso
 ```bash
 # Reboot device
 # After reboot, get a root shell in Termux to login:
@@ -157,9 +163,12 @@ ts up
 ts status
 ```
 
-Credits / Créditos
-- Project Author / Autor: elmendezz
-- ROM Environment: Alexenferman (LineageOS 14.1 for S3)
-- Software: Tailscale
+- Autor: elmendezz
+ * **ROM Environment:** [Alexenferman (crDroid for S3)](https://xdaforums.com/t/rom-7-1-2-crdroid-3-8-9-unofficial-d2att-can-i747-m-compiled-by-alexenferman.4021787/)
+* **Software:** [Tailscale](https://tailscale.com)
+* [Tailscale For Termux](https://github.com/termux/termux-packages/issues/10166)
 
-Developed for the community to keep legacy hardware useful. Desarrollado para la comunidad para mantener hardware antiguo funcional.
+
+Developed for the community to keep legacy hardware useful.
+ 
+Desarrollado para la comunidad para mantener hardware antiguo funcional.
