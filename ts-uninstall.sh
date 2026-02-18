@@ -29,6 +29,12 @@ mount -o ro,remount /
 echo "[+] Eliminando datos de estado..."
 rm -rf "$STATE_DIR"
 
+SERVICE_SCRIPT="/data/adb/service.d/tailscale_init.sh"
+if [ -f "$SERVICE_SCRIPT" ]; then
+    echo "[+] Eliminando script de inicio automático (Magisk)..."
+    rm -f "$SERVICE_SCRIPT"
+fi
+
 echo "[+] Limpieza adicional..."
 rm -rf /data/local/tmp/tailscale_install 2>/dev/null || true
 
