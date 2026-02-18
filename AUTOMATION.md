@@ -36,10 +36,12 @@ curl -fsSL https://raw.githubusercontent.com/elmendezz/tailscale-android-legacy/
 
 ## 🛠️ Specific architectures / Arquitecturas específicas
 
-EN: Architecture-specific scripts to install Tailscale for your device.  
+EN: Architecture-specific scripts to install Tailscale for your device.
+  
 ES: Scripts específicos para instalar Tailscale según la arquitectura del dispositivo.
 
 ⚠️ Warning — Choose the correct architecture: these scripts install architecture-specific binaries. Installing the wrong architecture can prevent Tailscale from running or, in worst cases, cause system issues. They perform system-level operations (remounting /system rw, moving binaries, creating device nodes, etc.), require root (adb shell su or Magisk) and may void your warranty. Use at your own risk.  
+
 ⚠️ Advertencia — Elige bien la arquitectura: estos scripts instalan binarios específicos para cada arquitectura. Instalar la arquitectura equivocada puede impedir que Tailscale funcione o, en el peor de los casos, causar problemas en el sistema. Realizan operaciones a nivel de sistema (remontar /system en rw, mover binarios, crear nodos de dispositivo, etc.), requieren root (adb shell su o Magisk) y pueden anular la garantía. Úsalos bajo tu propia responsabilidad.
 
 ### ts-arm.sh (ARM 32-bit)
