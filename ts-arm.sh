@@ -33,7 +33,17 @@ if [ ! -f "$DIR/tailscale" ] || [ ! -f "$DIR/tailscaled" ]; then
 fi
 
 echo "[+] Remontando /system en rw..."
-mount -o rw,remount /
+if ! mount -o rw,remount / 2>/dev/null; then
+    echo "[*] Montaje en / falló. Intentando montar /system..."
+    mount -o rw,remount /system 2>/dev/null || true
+fi
+
+if ! touch /system/.rw_check 2>/dev/null; then
+    echo "[-] Error CRÍTICO: No se pudo montar el sistema como escritura (RW)."
+    echo "    Tu dispositivo tiene protección contra escritura en /system (común en Android 10+)."
+    exit 1
+fi
+rm -f /system/.rw_check
 
 mkdir -p "$INSTALLDIR"
 
