@@ -8,6 +8,11 @@ EN: We are not responsible for any damage to your device. Although this process 
 
 ES: No nos hacemos responsables de cualquier daño a tu dispositivo. Aunque este proceso es seguro y reversible, la modificación de archivos del sistema mediante Magisk siempre conlleva un riesgo mínimo. Procede con precaución.
 
+# ⚡ Automated Installation / Instalación Automatizada
+EN: For a faster and automated installation using one-line scripts, check out [AUTOMATION.md](AUTOMATION.md).
+
+ES: Para una instalación más rápida y automatizada usando scripts de una línea, revisa [AUTOMATION.md](AUTOMATION.md).
+
 # 🔍 0. Verify Architecture / Verifica tu Arquitectura
 EN: Before downloading, verify your device's ABI (Architecture) to choose the correct binary.
 
