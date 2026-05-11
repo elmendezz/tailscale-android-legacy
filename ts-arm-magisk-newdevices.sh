@@ -3,16 +3,16 @@ set -e
 
 ARCH="arm"
 echo "[+] Usando arquitectura forzada: $ARCH"
-echo "[+] Instalación nativa en Magisk (Método original)"
+echo "[+] Instalación nativa en Magisk (Sin dependencias de Termux)"
 
 MODULE_DIR="/data/adb/modules/tailscale_systemless"
 STATE_DIR="/data/tailscale"
 
-echo "[1/4] Descargando binarios de Tailscale ($ARCH)..."
+echo "[1/4] Descargando e instalando binarios de Tailscale..."
 URL="https://pkgs.tailscale.com/stable/tailscale_latest_${ARCH}.tgz"
 TEMP_DIR=$(mktemp -d)
 
-# Usando tu método original con curl
+# Usando tu método exacto de descarga
 curl -fsSL "$URL" -o "$TEMP_DIR/tailscale.tgz"
 tar xzf "$TEMP_DIR/tailscale.tgz" -C "$TEMP_DIR"
 
@@ -21,7 +21,7 @@ DIR=$(find "$TEMP_DIR" -type d -name "tailscale_*")
 echo "[2/4] Creando módulo de Magisk para integración de sistema..."
 mkdir -p "$MODULE_DIR/system/bin"
 
-# Mover los binarios directamente a la ruta del sistema de Magisk
+# Los movemos directamente al módulo de Magisk, ignorando Termux
 mv "$DIR/tailscale" "$MODULE_DIR/system/bin/"
 mv "$DIR/tailscaled" "$MODULE_DIR/system/bin/"
 
@@ -34,7 +34,7 @@ name=Tailscale Systemless
 version=1.1
 versionCode=2
 author=elmendezz
-description=Integración nativa para Tailscale CLI.
+description=Integración nativa para Tailscale CLI sin Termux.
 EOF
 
 # Crear un alias "ts" para conveniencia
@@ -47,7 +47,6 @@ chmod +x "$MODULE_DIR/system/bin/ts"
 echo "[✔] Módulo de Magisk creado en $MODULE_DIR"
 
 echo "[3/4] Configurando servicio de inicio automático de Magisk..."
-# Usar service.sh dentro del módulo de Magisk
 cat > "$MODULE_DIR/service.sh" <<EOF
 #!/system/bin/sh
 # Esperar a que el sistema arranque
@@ -81,6 +80,6 @@ echo "[4/4] ¡Instalación completada!"
 echo "------------------------------------------------------------------"
 echo "==> ACCIÓN REQUERIDA: Por favor, REINICIA tu dispositivo ahora."
 echo "------------------------------------------------------------------"
-echo "Después de reiniciar, ejecuta como superusuario:"
+echo "Después de reiniciar, ejecuta en una terminal root:"
 echo "  ts up"
 echo "------------------------------------------------------------------"
